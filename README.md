@@ -16,12 +16,18 @@
 
 8. G&D 학습 불균형 조정 : G와 D 학습 주기를 다르게 하고, 자동 조정하게 하여 균형을 이루도록 조정
 
+---
+
+## < 모델별 특징 >
+
 | model | 장단점 | 특징 |
 |:------------:|:---------------------:|:---------:|
 | Unet | 적은 메모리와 간단한 구조로 빠른 학습 가능 / 깊은 특징 학습에 한계 | 기본적인 이미지 복원 작업에 적합. 세부 디테일 복원은 부족할 수 있음. |
 | Residual + Unet | Residual Block 추가로 학습 효율 증가, Dropout으로 과적합 방지 가능 / Resnet + Unet 보다 성능이 낮을 수 있음 | 깊이 있는 복원 가능, 복잡한 이미지에서도 안정적으로 동작 |
 | Resnet + Unet | 깊은 네트워크 학습이 가능하며, Resnet skip connection으로 학습 안정성 증가 / 구조가 복잡하여 학습 시간이 길고 메모리 사용량 증가 | 복잡한 이미지 세부 정보를 잘 복원하지만 학습 비용이 높음 |
 
+---
+## DACON_image.ipynb
 
 ```
 import torch
@@ -254,6 +260,23 @@ for epoch in range(epochs):
 generator.train()  
 discriminator.train()  
 ```
+
+---
+
+## Loss Graph
+
 <p align="center">
 <img src="https://github.com/dabin0701/Dacon_Image-Restoration/blob/f8ae4764d356de2df2292da81f5e49e5ccca782b/epochs%2058.png"  width="500" height="300"/>
+</p>
+
+## Test_input
+
+<p align="center">
+<img src="https://github.com/dabin0701/Dacon_Image-Restoration/blob/ad137c190c745c86e3dc74500730727e5a006c82/TEST_001%20(1).png"  width="500" height="300"/>
+</p>
+
+## Test_result
+
+<p align="center">
+<img src="https://github.com/dabin0701/Dacon_Image-Restoration/blob/ad137c190c745c86e3dc74500730727e5a006c82/TEST_001.png"  width="500" height="300"/>
 </p>
