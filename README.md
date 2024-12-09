@@ -254,4 +254,6 @@ for epoch in range(epochs):
 generator.train()  
 discriminator.train()  
 ```
-
+<p align="center">
+<img src="https://github.com/dabin0701/Dacon_Image-Restoration/blob/f8ae4764d356de2df2292da81f5e49e5ccca782b/epochs%2058.png"  width="500" height="300"/>
+</p>
